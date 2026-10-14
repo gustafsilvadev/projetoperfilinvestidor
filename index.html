@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monte sua carteira de investimentos</title>
+  <meta name="description" content="Responda a um quiz rápido, descubra seu perfil de investidor e veja uma sugestão de carteira baseada nos seus objetivos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <h1>Descubra seu perfil de investidor e monte sua carteira</h1>
+      <p>Responda a poucas perguntas e veja uma sugestão de divisão entre classes de investimento, baseada nos seus objetivos.</p>
+    </header>
+
+    <section id="quiz" class="painel quiz" aria-label="Quiz de perfil de investidor">
+      <div class="progresso">
+        <p id="progresso-texto" class="progresso-texto"></p>
+        <div class="progresso-trilho" aria-hidden="true">
+          <div id="progresso-barra" class="progresso-barra"></div>
+        </div>
+      </div>
+
+      <form id="form-passo" novalidate>
+        <fieldset id="campo-passo"></fieldset>
+        <p id="erro" class="erro" role="alert"></p>
+        <div class="acoes">
+          <button type="button" id="btn-voltar" class="secundario" hidden>Voltar</button>
+          <button type="submit" id="btn-proximo">Próxima</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="resultado" class="resultado" aria-live="polite" hidden>
+      <div class="painel">
+        <h2 id="resultado-titulo" class="resultado-titulo" tabindex="-1"></h2>
+        <p id="perfil-descricao" class="perfil-descricao"></p>
+        <ol class="escala" aria-label="Perfis de investidor, do mais cauteloso ao mais arrojado">
+          <li id="escala-conservador">Conservador</li>
+          <li id="escala-moderado">Moderado</li>
+          <li id="escala-arrojado">Arrojado</li>
+        </ol>
+      </div>
+
+      <div class="painel">
+        <h2>Sua carteira sugerida</h2>
+        <div class="carteira-grade">
+          <div id="rosca" class="rosca" role="img" aria-label="Gráfico de rosca com a divisão da carteira">
+            <div class="rosca-centro">
+              <span id="rosca-valor" class="rosca-valor"></span>
+              <span id="rosca-legenda" class="rosca-legenda"></span>
+            </div>
+          </div>
+          <ul id="lista-classes" class="lista-classes"></ul>
+        </div>
+      </div>
+
+      <div class="painel">
+        <h2>Por que essa divisão</h2>
+        <ul id="lista-motivos" class="lista-motivos"></ul>
+      </div>
+
+      <p class="aviso">
+        Este site tem caráter educacional. A carteira é uma sugestão genérica de divisão entre classes de ativos e não é recomendação de investimento personalizada. Os exemplos não indicam produtos específicos e rentabilidade passada não garante resultados futuros. Antes de investir, procure um profissional habilitado.
+      </p>
+
+      <button type="button" id="btn-refazer" class="secundario">Refazer o quiz</button>
+    </section>
+  </main>
+
+  <script src="carteira.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
